@@ -8,4 +8,11 @@ use Illuminate\Database\Eloquent\Model;
 class Resource extends Model
 {
     use HasFactory;
+
+    protected $fillable = ['title', 'category_id', 'link', 'description', 'creator_id'];
+
+    public function category()
+    {
+        return $this->belongsTo(Category::class);
+    }
 }

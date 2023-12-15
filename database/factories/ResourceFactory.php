@@ -20,7 +20,7 @@ class ResourceFactory extends Factory
     {
         return [
             'title' => $this->faker->sentence,
-            'category_id' => Category::new(),
+            'category_id' => Category::factory(),
             'link' => $this->faker->url,
             'description' => $this->faker->paragraph,
             'creator_id' => User::factory(),
