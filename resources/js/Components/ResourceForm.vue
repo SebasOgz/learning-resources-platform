@@ -8,7 +8,7 @@ let link = ref("");
 
 function createResource(){
     axios
-        .post("/api/resources", {
+        .post("api/resources", {
             title: title.value,
             description: description.value,
             link: link.value,
