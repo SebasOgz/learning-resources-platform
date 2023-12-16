@@ -77,7 +77,7 @@ onMounted(() => {
                         <tr v-for="resource in resources" :key="resource.id">
                             <th scope="row" class="p-4 text-left">{{ resource.title }}</th>
                             <th scope="row" class="p-4">
-                                <a target="_blank" :href="resource.Link">Ver recurso</a>
+                                <a target="_blank" :href="resource.link">Ver recurso</a>
                             </th>
                             <th scope="row" class="p-4">{{ resource.category.name }}</th>
                         </tr>
