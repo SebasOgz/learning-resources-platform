@@ -20,9 +20,13 @@ function createResource(){
             title: title.value,
             description: description.value,
             link: link.value,
+            category_id: category_id.value, 
         })
         .then((response) => {
-            console.log(response);
+            window.location.href = "/"; 
+        })
+        .catch((error) => {
+            alert(error.message);
         });
 }
 
@@ -38,7 +42,7 @@ function createResource(){
     <input type="text" v-model="link">
     <label class="p-4">Categoría</label>
     <select v-model="category_id">
-        <option v-for="category in categories" :key="category.id">
+        <option v-for="category in categories" :key="category.id" :value="category.id">
             {{ category.name }}
         </option>
     </select>
