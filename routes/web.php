@@ -3,6 +3,7 @@
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\ProfileController;
 use App\Http\Controllers\ResourceController;
+use App\Http\Controllers\VoteController;
 use App\Models\Category;
 use App\Models\Resource;
 use Illuminate\Foundation\Application;
@@ -21,7 +22,7 @@ use Inertia\Inertia;
 |
 */
 
-Route::get('/', [ResourceController::class, 'index']);
+Route::get('/', [ResourceController::class, 'index'])->name('home');
 
 Route::get('/dashboard', function () {
     return Inertia::render('Dashboard');
@@ -38,3 +39,5 @@ require __DIR__.'/auth.php';
 Route::get('api/resources', [ResourceController::class, 'search']);
 Route::middleware('auth')->post('api/resources', [ResourceController::class, 'store']);
 Route::get('api/categories', [CategoryController::class, 'index']);
+Route::get('api/vote/{resource}', VoteController::class);
+

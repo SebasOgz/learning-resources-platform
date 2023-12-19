@@ -34,18 +34,18 @@ function createResource(){
 
 <template>
 <div class="m-8">
-    <label class="p-4">Titulo</label>
-    <input type="text" v-model="title">
-    <label class="p-4">Descripción</label>
-    <input type="text" v-model="description">
-    <label class="p-4">Link</label>
-    <input type="text" v-model="link">
-    <label class="p-4">Categoría</label>
+    <label class="p-4 font-semibold">Título</label>
+    <input type="text" placeholder="Título del recurso" v-model="title">
+    <label class="p-4 font-semibold">Descripción</label>
+    <input type="text" placeholder="Descripción del recurso" v-model="description">
+    <label class="p-4 font-semibold">Link</label>
+    <input type="text" placeholder="Link del recurso" v-model="link">
+    <label class="p-4 font-semibold">Categoría</label>
     <select v-model="category_id">
         <option v-for="category in categories" :key="category.id" :value="category.id">
             {{ category.name }}
         </option>
     </select>
-    <button @click="createResource" class="m-8 bg-gray-900 text-white">Crear Recurso</button>
+    <button @click="createResource" class="m-8 py-2 px-4 bg-blue-500 text-white font-semibold rounded-md hover:bg-blue-600 transition duration-300 ease-in-out">Crear Recurso</button>
 </div>
 </template>
